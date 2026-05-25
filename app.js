@@ -72,7 +72,7 @@ app.use("/api/product", jwtAuth, porductRoutes);
 app.use("/api/cart", jwtAuth, cartRoutes);
 
 app.get("/", (req, res) => {
-  res.send("hello from rest api");
+  res.send("Welcome to E-Commerce APP......");
 });
 
 //send error message if user provided route does'nt match  with the available routes
