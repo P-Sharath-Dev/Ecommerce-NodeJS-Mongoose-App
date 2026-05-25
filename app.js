@@ -9,7 +9,8 @@ import cartRoutes from "./src/features/cart/cartItem.routes.js";
 import jwtAuth from "./src/middlewares/user/jwt.middleware.js";
 import swaggerUi from "swagger-ui-express";
 //import swaggerDocument from './swagger.json' assert {type : "json"};
-import swaggerDocument from "./swagger3.json" assert { type: "json" };
+// import swaggerDocument from "./swagger3.json" assert { type: "json" };
+import fs from "fs";
 import cors from "cors";
 import logger from "./src/middlewares/user/logger.middleware.js";
 import ApplicationError from "./src/error_handler/app.error.js";
@@ -18,6 +19,8 @@ import orderRoutes from "./src/features/order/order.routes.js";
 import likeRoutes from "./src/features/like/like.routes.js";
 import { connectToDBWihtMongoose } from "./src/config/mongoose.config.js";
 import mongoose from "mongoose";
+
+const swaggerDocument = JSON.parse(fs.readFileSync("./swagger3.json", "utf-8"));
 
 const app = express();
 const port = 3000;
